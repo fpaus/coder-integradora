@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { Model } from 'mongoose';
+import { Model, RootFilterQuery } from 'mongoose';
 
 import { CreatePetDto } from './dto/create-pet.dto';
 import { UpdatePetDto } from './dto/update-pet.dto';
@@ -18,7 +18,11 @@ export class PetsService {
     return this.petModel.create({ ...createPetDto, image: image.filename });
   }
 
-  findAll() {
+  findAll(filter?: RootFilterQuery<Pet>) {
+    if (filter) {
+      return this.petModel.find(filter);
+    }
+
     return this.petModel.find();
   }
 
