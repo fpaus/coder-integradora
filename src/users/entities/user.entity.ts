@@ -1,7 +1,7 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { HydratedDocument, Types } from 'mongoose';
 
-import { Pet } from 'src/pets/entities/pet.entity';
+import { Pet } from '../../pets/entities/pet.entity';
 
 @Schema()
 export class User {

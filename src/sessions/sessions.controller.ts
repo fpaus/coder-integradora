@@ -1,4 +1,13 @@
-import { Body, Controller, Get, Post, Req, UseGuards } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  HttpCode,
+  HttpStatus,
+  Post,
+  Req,
+  UseGuards,
+} from '@nestjs/common';
 import { ApiBearerAuth } from '@nestjs/swagger';
 
 import { AuthGuard } from './auth.guard';
@@ -26,6 +35,7 @@ export class SessionsController {
   }
 
   @Post('login')
+  @HttpCode(HttpStatus.OK)
   login(@Body() body: LoginDto) {
     return this.sessionsService.login(body);
   }

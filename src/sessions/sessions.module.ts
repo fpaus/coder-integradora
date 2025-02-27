@@ -2,9 +2,9 @@ import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { JwtModule } from '@nestjs/jwt';
 
+import { UsersModule } from '../users/users.module';
 import { SessionsController } from './sessions.controller';
 import { SessionsService } from './sessions.service';
-import { UsersModule } from 'src/users/users.module';
 
 @Module({
   imports: [
