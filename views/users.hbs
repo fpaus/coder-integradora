@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <meta charset='utf-8' />
+    <title>App</title>
+    <link rel='stylesheet' href='https://matcha.mizu.sh/matcha.css' />
+  </head>
+  <body>
+    <h1>Registered users</h1>
+    <a href='/'><button>Go back</button></a>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Pets adopted</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each users}}
+                <tr>
+                    <td>{{this.name}}</td>
+                    <td>{{this.email}}</td>
+                    <td>{{this.petsAdopted}}</td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+  </body>
+</html>
