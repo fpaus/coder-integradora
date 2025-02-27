@@ -8,8 +8,17 @@ export class AppController {
 
   @Get()
   @Render('index')
-  root() {
-    const message = this.appService.getHello();
-    return { message };
+  root() {}
+
+  @Get('view-users')
+  @Render('users')
+  async viewUsers() {
+    return { users: await this.appService.getAllUsers() };
+  }
+
+  @Get('view-pets')
+  @Render('pets')
+  async viewPets() {
+    return { pets: await this.appService.getAllNonAdoptedPets() };
   }
 }
