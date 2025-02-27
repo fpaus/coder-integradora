@@ -8,7 +8,7 @@ export class User {
   @Prop({ required: true, unique: true })
   email: string;
   @Prop({ required: true })
-  public firstName: string;
+  public first_name: string;
 
   // @Prop({
   //   type: [
@@ -24,7 +24,7 @@ export class User {
   @Prop({ type: Date, default: Date.now })
   public lastConnection: Date;
   @Prop({ required: true })
-  public lastName: string;
+  public last_name: string;
   @Prop({ required: true })
   public password: string;
   @Prop({
